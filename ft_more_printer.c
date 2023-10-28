@@ -30,8 +30,8 @@ int	ft_putlohexa_spe(unsigned long long n)
 	i = 0;
 	if (n >= 16)
 	{
-		i += ft_putlohexa(n / 16);
-		i += ft_putlohexa(n % 16);
+		i += ft_putlohexa_spe(n / 16);
+		i += ft_putlohexa_spe(n % 16);
 	}
 	else
 	{
