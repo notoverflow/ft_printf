@@ -19,7 +19,27 @@ int	ft_putptr(unsigned long long n)
 	if (!n)
 		return (ft_putstr("(nil)"));
 	i = ft_putstr("0x");
-	i += ft_putlohexa(n);
+	i += ft_putlohexa_spe(n);
+	return (i);
+}
+
+int	ft_putlohexa_spe(unsigned long long n)
+{
+	int	i;
+
+	i = 0;
+	if (n >= 16)
+	{
+		i += ft_putlohexa(n / 16);
+		i += ft_putlohexa(n % 16);
+	}
+	else
+	{
+		if (n < 10)
+			i += ft_putchar(n + '0');
+		else
+			i += ft_putchar(n + 'a' - 10);
+	}
 	return (i);
 }
 
