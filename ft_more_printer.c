@@ -16,7 +16,9 @@ int	ft_putptr(unsigned long long n)
 {
 	int	i;
 
-	i = 0;
+	if (!n)
+		return (ft_putstr("(nil)"));
+	i = ft_putstr("0x");
 	if (n >= 16)
 	{
 		i += ft_putptr(n / 16);
