@@ -19,7 +19,7 @@ int	ft_printf_arg(va_list arg, char c)
 	if (c == 's')
 		return (ft_putstr(va_arg(arg, char *)));
 	if (c == 'p')
-		return (ft_putptr(va_arg(arg, unsigned long long)));
+		return (ft_p	utptr(va_arg(arg, unsigned long long)));
 	if (c == 'd' || c == 'i')
 		return (ft_putnbr(va_arg(arg, int)));
 	if (c == 'u')

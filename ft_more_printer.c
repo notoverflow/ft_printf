@@ -12,26 +12,6 @@
 
 #include "ft_printf.h"
 
-int	ft_putptr_bis(unsigned long long n)
-{
-	int	i;
-
-	i = 0;
-	if (n >= 16)
-	{
-		i += ft_putptr(n / 16);
-		i += ft_putptr(n % 16);
-	}
-	else
-	{
-		if (n < 10)
-			i += ft_putchar(n + '0');
-		else
-			i += ft_putchar(n + 'a' - 10);
-	}
-	return (i);
-}
-
 int	ft_putptr(unsigned long long n)
 {
 	int	i;
@@ -39,7 +19,8 @@ int	ft_putptr(unsigned long long n)
 	if (!n)
 		return (ft_putstr("(nil)"));
 	i = ft_putstr("0x");
-	return (i + ft_putptr_bis(n));
+	i += ft_putlohexa(n);
+	return (i);
 }
 
 int	ft_putunbr(unsigned int n)
